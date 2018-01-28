@@ -2,7 +2,10 @@
   font-size: 2rem;
   border: none;
   margin: 0 0 $s-size 0;
-  padding: $s-size 0 $s-size 0;
+  padding: $s-size $s-size $s-size $s-size;
   width: 100%;
-  text-align: center;
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;         /* Opera/IE 8+ */
+  text-transform: uppercase;
 }

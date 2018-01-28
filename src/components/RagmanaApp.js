@@ -2,6 +2,8 @@ import React from 'react';
 import Header from './Header';
 import Question from './Question';
 import Answer from './Answer';
+//import Players from './../../public/players.json';
+import Football from './../../public/football.json';
 
 export default class RagmanaApp extends React.Component {
   constructor(props) {
@@ -15,129 +17,55 @@ export default class RagmanaApp extends React.Component {
     result: undefined
   }
   generateAnagram() {
-    const words = 
-    [
-      'FalleN',
-      'fer',
-      'coldzera',
-      'TACO',
-      'Xyp9x',
-      'dupreeh',
-      'olofmeister',
-      'NBK',
-      'dev1ce',
-      'neo',
-      'TaZ',
-      'pashaBiceps',
-      'byali',
-      'snax',
-      'apEX',
-      'kennyS',
-      'karrigan',
-      'Happy',
-      'Kjaerbye',
-      'GuardiaN',
-      'flusha',
-      'JW',
-      'KRiMZ',
-      'gla1ve',
-      'GeT_RiGhT',
-      'Xizt',
-      'f0rest',
-      'fnx',
-      'shox',
-      'Zeus',
-      'cajunb',
-      'friberg',
-      'rain',
-      'NiKo',
-      'KIOSHIMA',
-      'Edward',
-      'seized',
-      'boltz',
-      'flamie',
-      'Skadoodle',
-      'tarik',
-      'Rush',
-      'Stewie2k',
-      'dennis',
-      'AdreN',
-      'MSL',
-      'Dosia',
-      'SmithZz',
-      'NAF-FLY',
-      'felps',
-      'SIXER',
-      'stanislaw',
-      'bodyy',
-      'mou',
-      'k0nfig',
-      'pronax',
-      'n0thing',
-      'ScreaM',
-      'shroud',
-      'autimatic',
-      'mixwell',
-      'allu',
-      'aizy',
-      'HObbit',
-      'RpK',
-      'nitr0',
-      's1mple',
-      'ELiGE',
-      'jdm64',
-      'Magisk',
-      'chrisJ',
-      'RUBINO',
-      'hen1',
-      'Lucas',
-      'hiko',
-      'rallen',
-      'MICHU',
-      'szpero',
-      'DD',
-      'Mo',
-      'mouz',
-      'oskar',
-      'somebody',
-      'Furlan',
-      'draken',
-      'pyth',
-      'seangares',
-      'denis',
-      'steel',
-      'Fifflaren',
-      'Valde',
-      'moddii',
-      'Maikelele',
-      'Ex6TenZ',
-      'REZ',
-      'ANGE1',
-      'fancy1',
-      'twist',
-      'nex',
-      'AttackeR'      
-    ]
-    this.state.word = words[Math.floor(Math.random() * words.length)]
+    // reset the anagram
+    if (this.state.anagram) {
+      this.state.anagram = "";
+    }
+
+    // choose a random year, position and player and set as the word
+    let year = Object.keys(Football.year)[Math.floor(Math.random() * Object.keys(Football.year).length)]
+    let position = Math.floor(Math.random() * Football.year[year].length)
+    this.state.word = Football.year[year][position].Player
+
+    // copy the word into a tempWord array
     let tempWord = []
     for (let i = 0; i < this.state.word.length; i++) {
       tempWord.push(this.state.word[i])
     }
+
     this.state.anagram = "";
+    /* // one word version
     for (let i = 0; i < this.state.word.length; i++) {
       let letterIndex = Math.floor(Math.random() * tempWord.length)
       this.state.anagram += tempWord[letterIndex]
       tempWord.splice(letterIndex, 1)
     }
+    */
+    // seperate the words
+    var words = this.state.word.split(" ");
+
+    words.forEach((word) => {
+      var tempArr = word.split("");
+
+      for (var i = 0; i < word.length; i++) {
+        // add random letter from word to anagram
+        var letterIndex = Math.floor(Math.random() * tempArr.length);
+        this.state.anagram += tempArr[letterIndex];
+        // remove the used letter from tempArr so it can't be reused
+        tempArr.splice(letterIndex, 1);
+
+        // add a space after last letter of word
+        if (i == word.length-1) {
+          this.state.anagram += " ";
+        }
+      }
+    })
   }
   checkAnswer = (e) => {
     e.preventDefault();
-    console.log(this.state.word)
-    console.log(this.state.answer.toLowerCase())
     if (this.state.word.toLowerCase() === this.state.answer.toLowerCase()) {
       this.setState({result: "Correct!"});
       this.generateAnagram();
-      console.log(e.target)
       document.getElementById("inputForm").reset();
     } else {
       this.setState({result: "Try again."});
