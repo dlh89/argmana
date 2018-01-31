@@ -1,5 +1,6 @@
 @import './base/settings';
 @import './base/base';
+@import './base/mixins';
 @import './components/header';
 @import './components/container';
 @import './components/title';
@@ -7,7 +8,9 @@
 @import './components/question';
 @import './components/anagram';
 @import './components/answer';
+@import './components/select';
 @import './components/input';
 @import './components/btn';
 @import './components/hr';
 @import './components/result';
+@import './components/navbar';

@@ -1,12 +1,19 @@
 .btn {
   font-size: 2rem;
-  padding: 1rem;
+  padding: $s-size;
   border: none;
   background: $dark-blue;
   color: #FFF;
-  width: 100%;
   transition: 0.2s;
   margin-bottom: 2px;
+}
+
+.btn--start {
+
+}
+
+.btn--answer {
+  width: 100%;
 }
 
 .btn:hover {

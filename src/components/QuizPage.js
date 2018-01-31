@@ -1,11 +1,11 @@
 import React from 'react';
-import Header from './Header';
 import Question from './Question';
 import Answer from './Answer';
+import Categories from './Categories';
 //import Players from './../../public/players.json';
 import Football from './../../public/football.json';
 
-export default class RagmanaApp extends React.Component {
+export default class QuizPage extends React.Component {
   constructor(props) {
     super(props);
     this.generateAnagram();
@@ -83,10 +83,9 @@ export default class RagmanaApp extends React.Component {
   render() {
     return (
       <div>
-        <Header />
-        <Question anagram={this.state.anagram}/>
-        <Answer checkAnswer={this.checkAnswer} result={this.state.result} handleChange={this.handleChange} skip={this.skip} />
-      </div>
+      <Question anagram={this.state.anagram}/>
+      <Answer checkAnswer={this.checkAnswer} result={this.state.result} handleChange={this.handleChange} skip={this.skip} />
+    </div>
     )
   }
 }

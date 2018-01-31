@@ -1,0 +1,41 @@
+.navbar {
+  position: absolute;
+  width: 100%;
+  transition: all ease-out .5s;
+  position: relative;
+  margin-bottom: 0;
+  transform: translateY(0%);
+  -webkit-transform: translateX(0%);
+  background: #333;
+  font-size: 1.5rem;
+  border-bottom: 1px solid $light-blue;
+}
+
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  width: 100%;
+}
+
+.navbar li {
+  float: left;
+  display: block;
+}
+
+.navbar li a {
+  display: block;
+  color: #FFF;
+  text-align: center;
+  text-decoration: none;
+  padding: 10px;
+}
+
+.navbar li a:hover {
+  background: $dark-blue;
+}
+
+.is-active {
+  font-weight: bold;
+}
