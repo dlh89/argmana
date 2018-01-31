@@ -1,23 +1,28 @@
 import React from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import createHistory from 'history/createBrowserHistory';
-import Header from '../Components/Header';
-import Question from '../Components/Question';
-import Answer from '../Components/Answer';
-import Categories from '../Components/Categories';
-import QuizPage from '../components/QuizPage';
+import HomePage from '../components/HomePage'
+import PlayPage from '../components/PlayPage';
+import CategoriesPage from '../components/CategoriesPage';
+import NotFoundPage from '../components/NotFoundPage';
+import Header from '../components/Header';
+import Navbar from '../components/Navbar';
 
 export const history = createHistory();
 
 const AppRouter = () => (
-  <Router history={history}>
+  <BrowserRouter>
     <div>
-        <Switch>
-          <Route path="/select_category" component={QuizPage} exact={true} />
-          <Route path="/game" component={QuizPage} exact={true} />
-        </Switch>
+      <Navbar />
+      <Header />
+      <Switch>
+        <Route path="/" component={HomePage} exact={true} />
+        <Route path="/categories" component={CategoriesPage} />
+        <Route path="/play/:topic" component={PlayPage} />
+        <Route component={NotFoundPage} />
+      </Switch>
     </div>
-  </Router>
-)
+  </BrowserRouter>
+);
 
 export default AppRouter;
