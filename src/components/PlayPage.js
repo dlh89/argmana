@@ -73,8 +73,56 @@ export default class QuizPage extends React.Component {
     })
   }
   checkAnswer = (e) => {
+    const accents = {
+      à: 'a',
+      á: 'a',
+      â: 'a',
+      ã: 'a',
+      ä: 'a',
+      å: 'a',
+      æ: 'a',
+      ç: 'c',
+      è: 'e',
+      é: 'e',
+      ê: 'e',
+      ë: 'e',
+      æ: 'e',
+      ì: 'i',
+      í: 'i',
+      î: 'i',
+      ï: 'i',
+      ñ: 'n',
+      ò: 'o',
+      ó: 'o',
+      ô: 'o',
+      õ: 'o',
+      ö: 'o',
+      ø: 'o',
+      ß: 'ss',
+      ù: 'u',
+      ú: 'u',
+      û: 'u',
+      ü: 'u',
+      ÿ: 'y'
+    }
+    
+    const replaceAccents = (word) => {
+      let newWord = word.slice();
+      // check if each of the accented characters appears in the word
+      Object.keys(accents).forEach((letter) => {
+        if (word.includes(letter)) {
+          // replace each instance with the non-accented character
+          for (var i = 0; i < word.split(letter).length; i++) {
+            newWord = newWord.replace(word[word.indexOf(letter)], accents[letter]);
+          }
+        }
+      })
+      return newWord;
+    }
+    
     e.preventDefault();
-    if (this.state.word.toLowerCase() === this.state.answer.toLowerCase()) {
+    // check if the answer matches the word or if the version of the word without the accents matches the answer
+    if (this.state.word.toLowerCase() === this.state.answer.toLowerCase() || replaceAccents(this.state.word.toLowerCase()) === this.state.answer.toLowerCase()) {
       this.setState({result: "Correct!"});
       this.generateAnagram();
       document.getElementById("inputForm").reset();
