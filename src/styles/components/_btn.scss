@@ -2,8 +2,8 @@
   font-size: 2rem;
   padding: $s-size;
   border: none;
-  background: $dark-blue;
-  color: #FFF;
+  background: $color-secondary;
+  color: #fff;
   transition: 0.2s;
   margin-bottom: 2px;
 }
@@ -13,5 +13,5 @@
 }
 
 .btn:hover {
-  background-color: darken($dark-blue, 10%);
+  background-color: darken($color-secondary, 10%);
 }

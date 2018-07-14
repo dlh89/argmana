@@ -6,7 +6,7 @@ const Navbar = () => (
     <div className="container">
       <ul>
         <li><NavLink to="/" activeClassName="is-active" exact={true}>Home</NavLink></li>
-        <li><NavLink to="/categories" activeClassName="is-active">Play</NavLink></li>
+        <li><NavLink to="/play" activeClassName="is-active">Play</NavLink></li>
         <li><NavLink to="/about" activeClassName="is-active">About</NavLink></li>
         <li><NavLink to="/contact" activeClassName="is-active">Contact</NavLink></li>
       </ul>

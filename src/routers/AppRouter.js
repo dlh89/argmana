@@ -17,7 +17,7 @@ const AppRouter = () => (
       <Header />
       <Switch>
         <Route path="/" component={HomePage} exact={true} />
-        <Route path="/categories" component={CategoriesPage} />
+        <Route path="/play" component={CategoriesPage} exact={true} />
         <Route path="/play/:topic" component={PlayPage} />
         <Route component={NotFoundPage} />
       </Switch>
