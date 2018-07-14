@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const HomePage = () => (
-  <div className="container">
+  <div className="container u-padding-bottom-large">
     <div className="row">
       <div className="col-1-of-2">
         <h1 className="heading">Choose a topic</h1>

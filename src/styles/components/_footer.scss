@@ -1,0 +1,32 @@
+.footer {
+  background-color: $color-dark-grey;
+  background-image: linear-gradient(
+    to bottom,
+    $color-dark-grey,
+    darken($color-dark-grey, 10%)
+  );
+  color: $color-off-white;
+  font-size: 1.4rem;
+  line-height: 1.8;
+
+  &__container {
+    display: flex;
+    justify-content: space-around;
+
+    margin: auto;
+    max-width: 96rem;
+
+    @include respond(tab-land) {
+      margin: 0 3.2rem;
+      max-width: none;
+    }
+  }
+
+  &__list {
+    list-style: none;
+  }
+
+  &__heading {
+    text-transform: uppercase;
+  }
+}

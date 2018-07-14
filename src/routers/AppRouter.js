@@ -1,12 +1,13 @@
-import React from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import createHistory from 'history/createBrowserHistory';
-import HomePage from '../components/HomePage'
-import PlayPage from '../components/PlayPage';
-import CategoriesPage from '../components/CategoriesPage';
-import NotFoundPage from '../components/NotFoundPage';
-import Header from '../components/Header';
-import Navbar from '../components/Navbar';
+import React from "react";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import createHistory from "history/createBrowserHistory";
+import HomePage from "../components/HomePage";
+import PlayPage from "../components/PlayPage";
+import CategoriesPage from "../components/CategoriesPage";
+import NotFoundPage from "../components/NotFoundPage";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import Navbar from "../components/Navbar";
 
 export const history = createHistory();
 
@@ -21,6 +22,7 @@ const AppRouter = () => (
         <Route path="/play/:topic" component={PlayPage} />
         <Route component={NotFoundPage} />
       </Switch>
+      <Footer />
     </div>
   </BrowserRouter>
 );

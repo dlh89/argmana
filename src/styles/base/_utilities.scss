@@ -14,6 +14,10 @@
   margin-top: 4rem !important;
 }
 
+.u-margin-top-tiny {
+  margin-top: 2.5rem !important;
+}
+
 .u-center-text {
   text-align: center !important;
 }
@@ -24,4 +28,22 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.u-hr {
+  @supports not (
+    background-image:
+      linear-gradient(to right, transparent, $color-light-grey, transparent)
+  ) {
+    background-color: $color-light-grey;
+  }
+  background-image: linear-gradient(
+    to right,
+    transparent,
+    $color-light-grey,
+    transparent
+  );
+  border: none;
+  height: 1px;
+  margin: 3.4rem 0;
 }

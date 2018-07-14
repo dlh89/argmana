@@ -7,19 +7,95 @@
   -webkit-transform: translateX(0%);
   background: $color-primary;
   font-size: 1.5rem;
+
+  &__toggle-button {
+    background-color: transparent;
+    border: none;
+    display: none;
+    height: 2.3rem;
+    margin: 1.6rem;
+    position: absolute;
+    width: 2.4rem;
+    z-index: 99;
+
+    @include respond(tab-port) {
+      display: block;
+    }
+
+    &::before {
+      background-color: $color-light-grey;
+      content: "";
+      display: block;
+      height: 2px;
+      position: absolute;
+      top: 0;
+      transform-origin: 0 0;
+      transition: transform 0.25s ease;
+      width: 100%;
+    }
+
+    &::after {
+      background-color: $color-light-grey;
+      content: "";
+      display: block;
+      height: 2px;
+      position: absolute;
+      bottom: 0;
+      transform-origin: 0 100%;
+      transition: transform 0.25s ease;
+      width: 100%;
+    }
+
+    &--active {
+      &::before {
+        //top: 50%;
+        transform: rotate(45deg) scaleX(1.2);
+      }
+
+      &::after {
+        //top: 50%;
+        transform: rotate(-45deg) scaleX(1.2);
+      }
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__burger {
+    background-color: $color-light-grey;
+    height: 2px;
+    position: absolute;
+    transform: translateY(-50%);
+    width: 100%;
+
+    &--active {
+      display: none;
+    }
+  }
 }
 
-.navbar ul {
+.navbar__list {
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
   width: 100%;
+  transition: max-height 0.25s ease;
+
+  @include respond(tab-port) {
+    max-height: 0;
+  }
 }
 
 .navbar li {
   float: left;
   display: block;
+
+  @include respond(tab-port) {
+    float: none;
+  }
 }
 
 .navbar li a {
@@ -30,6 +106,7 @@
   padding: 1.5rem 3rem;
   text-align: center;
   text-decoration: none;
+  text-shadow: $text-shadow;
   text-transform: uppercase;
   transition: background-color 0.2s ease;
 }

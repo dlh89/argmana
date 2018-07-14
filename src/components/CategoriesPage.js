@@ -23,7 +23,7 @@ export class CategoriesPage extends React.Component {
   switchDescription(category) {
     switch (category) {
       case "Football":
-        return "Test your football knowledge with anagrams of the top 3 players in the Ballon d'Or for each year going back to the award's inception in 1956 up until the present day.";
+        return "Test your football knowledge with anagrams of the top 3 players in the Ballon d'Or for each year from the award's inception in 1956 up until the present day.";
       case "Tennis":
         return "Test your tennis knowledge with anagrams of the top 100 players of all time determined by an international panel of tennis experts. The list contains 62 men and 38 women.";
       case "CounterStrike":
@@ -39,9 +39,12 @@ export class CategoriesPage extends React.Component {
   render() {
     return (
       <div className="categories">
-        <div className="container">
+        <div className="container u-padding-bottom-large">
           <h3>Select a category</h3>
-          <select className="select" onChange={this.categorySelect.bind(this)}>
+          <select
+            className="select u-margin-top-tiny"
+            onChange={this.categorySelect.bind(this)}
+          >
             <option value="Football">Football</option>
             <option value="Tennis">Tennis</option>
             <option value="CounterStrike">Counter-Strike (1.0 - 1.6)</option>
