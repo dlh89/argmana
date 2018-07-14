@@ -1,25 +1,26 @@
-@mixin atSmall {
-  @media (min-width: 530px) {
-      @mixin-content;
-  }
-}
-
-@mixin atMedium {
-  @media (min-width: 800px) {
-      @mixin-content;
-  }
-}
-
-@mixin atLarge {
-  @media (min-width: 1010px) {
-      @mixin-content;
-  }
-}
-
 @mixin clearfix {
   &::after {
-      content: "";
-      clear: both;
-      display: table;
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+// Media queries
+@mixin respond($breakpoint) {
+  @if $breakpoint == mobile {
+    @media (max-width: 37.5em) {
+      @content;
+    } // 600px
+  }
+  @if $breakpoint == tab-port {
+    @media (max-width: 56.25em) {
+      @content;
+    } // 900px
+  }
+  @if $breakpoint == tab-land {
+    @media (max-width: 75em) {
+      @content;
+    } // 1200px
   }
 }

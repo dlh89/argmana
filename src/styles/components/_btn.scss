@@ -1,17 +1,45 @@
 .btn {
   font-size: 2rem;
-  padding: $s-size;
+  padding: 1rem 2rem;
   border: none;
   background: $color-secondary;
   color: #fff;
   transition: 0.2s;
   margin-bottom: 2px;
+
+  &:hover {
+    background-color: darken($color-secondary, 10%);
+  }
+}
+
+.btn--primary {
+  background-color: $color-primary;
+
+  &:hover {
+    background-color: darken($color-primary, 10%);
+  }
+}
+
+.btn--large-rounded {
+  border-radius: 4rem;
+  font-weight: 600;
+  padding: 1rem 4rem;
 }
 
 .btn--answer {
+  background-color: $color-green;
   width: 100%;
+
+  &:hover {
+    background-color: darken($color-green, 10%);
+  }
 }
 
-.btn:hover {
-  background-color: darken($color-secondary, 10%);
+.btn--skip {
+  background-color: $color-red;
+  width: 100%;
+
+  &:hover {
+    background-color: darken($color-red, 10%);
+  }
 }
