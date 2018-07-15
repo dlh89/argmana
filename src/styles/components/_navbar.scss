@@ -8,6 +8,16 @@
   background: $color-primary;
   font-size: 1.5rem;
 
+  &__container {
+    margin: auto;
+    max-width: 96rem;
+    position: relative;
+
+    @include respond(tab-port) {
+      max-width: 75%;
+    }
+  }
+
   &__toggle-button {
     background-color: transparent;
     border: none;

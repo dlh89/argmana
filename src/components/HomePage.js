@@ -8,10 +8,13 @@ const HomePage = () => (
         <h1 className="heading">Choose a topic</h1>
         <p className="info">
           From the highest grossing films of all time to Ballon d'Or winners,
-          pick a topic that interests you and challenge yourself!
+          pick a topic that interests you and challenge yourself.
         </p>
-        <h1 className="heading u-margin-top-medium">Decipher anagrams</h1>
-        <p className="info">Engage your brain and test your knowledge!</p>
+        <h1 className="heading u-margin-top-medium">Decipher the anagrams</h1>
+        <p className="info">
+          See if you can spot the real words from a jumble of letters. Engage
+          your brain and test your knowledge!
+        </p>
       </div>
       <div className="col-1-of-2">
         <div className="u-absolute-center">

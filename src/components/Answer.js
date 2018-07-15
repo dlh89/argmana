@@ -14,7 +14,9 @@ const Answer = props => (
       <button onClick={props.skip} className="btn btn--skip">
         Skip
       </button>
-      {props.result && <p className="result">{props.result}</p>}
+      {props.result && (
+        <p className="result u-margin-top-tiny">{props.result}</p>
+      )}
     </div>
   </div>
 );

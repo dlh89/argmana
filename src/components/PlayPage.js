@@ -107,7 +107,7 @@ export default class QuizPage extends React.Component {
     this.setState({ answer: e.target.value });
   };
   skip = () => {
-    this.setState({ result: "The answer was " + this.state.word });
+    this.setState({ result: `The answer was ${this.state.word}.` });
     document.getElementById("inputForm").reset();
     this.generateAnagram();
   };

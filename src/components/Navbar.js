@@ -12,10 +12,10 @@ export default class Navbar extends React.Component {
   render() {
     return (
       <nav className="navbar">
-        <div className="container">
-          <button className="navbar__toggle-button">
-            <div className="navbar__burger" />
-          </button>
+        <button className="navbar__toggle-button">
+          <div className="navbar__burger" />
+        </button>
+        <div className="navbar__container">
           <ul className="navbar__list">
             <li>
               <NavLink
